@@ -15,7 +15,7 @@ module objects {
   
       // reset the objects location to some value
       private _reset():void {
-        this.x = 960;
+        this.x = 1440;
       }
   
       // move the object to some new location
