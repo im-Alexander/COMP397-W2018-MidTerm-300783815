@@ -33,7 +33,7 @@ var scenes;
             this._cloudNum = 2;
             // loop and add each cloud to the array
             for (var count = 0; count < this._cloudNum; count++) {
-                this._clouds[count] = new objects.Cloud();
+                this._clouds[count] = new objects.Cloud2();
             }
             this._engineSound = createjs.Sound.play("engine");
             this._engineSound.loop = -1; // play forever

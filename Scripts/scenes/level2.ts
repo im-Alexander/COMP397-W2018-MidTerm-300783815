@@ -4,7 +4,7 @@ module scenes {
       private _ocean: objects.Ocean2;
       private _plane2: objects.Plane2;
       private _island2: objects.Island2;
-      private _clouds: objects.Cloud[];
+      private _clouds: objects.Cloud2[];
       private _cloudNum: number;
       private _scoreBoard: managers.ScoreBoard;
   
@@ -36,11 +36,11 @@ module scenes {
         this._island2 = new objects.Island2();
   
         // instantiate the cloud array
-        this._clouds = new Array<objects.Cloud>();
+        this._clouds = new Array<objects.Cloud2>();
         this._cloudNum = 2;
         // loop and add each cloud to the array
         for (let count = 0; count < this._cloudNum; count++) {
-          this._clouds[count] = new objects.Cloud();
+          this._clouds[count] = new objects.Cloud2();
         }
   
         this._engineSound = createjs.Sound.play("engine");

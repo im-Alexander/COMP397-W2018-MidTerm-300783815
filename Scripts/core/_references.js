@@ -21,6 +21,7 @@
 /// <reference path="../../Scripts/objects/island.ts"/>
 /// <reference path="../../Scripts/objects/island2.ts"/>
 /// <reference path="../../Scripts/objects/cloud.ts"/>
+/// <reference path="../../Scripts/objects/cloud2.ts"/>
 /// <reference path="../../Scripts/scenes/over.ts"/>
 /// <reference path="../../Scripts/scenes/play.ts"/>
 /// <reference path="../../Scripts/scenes/level2.ts"/>
