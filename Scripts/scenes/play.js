@@ -12,7 +12,6 @@ var scenes;
 (function (scenes) {
     var PlayScene = /** @class */ (function (_super) {
         __extends(PlayScene, _super);
-        // Public Properties
         // Constructor
         function PlayScene() {
             var _this = _super.call(this) || this;
@@ -67,6 +66,8 @@ var scenes;
             if (this._scoreBoard.Score >= 500) {
                 managers.Game.currentScene = config.Scene.LEVEL2;
             }
+            managers.Game.lives = this._scoreBoard.Lives;
+            managers.Game.score = this._scoreBoard.Score;
         };
         // This is where the fun happens
         PlayScene.prototype.Main = function () {

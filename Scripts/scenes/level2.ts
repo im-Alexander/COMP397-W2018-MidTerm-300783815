@@ -50,6 +50,9 @@ module scenes {
         // create the scoreboard UI for the Scene
         this._scoreBoard = new managers.ScoreBoard();
         managers.Game.scoreBoard = this._scoreBoard;
+
+        this._scoreBoard.Score = managers.Game.score;
+        this._scoreBoard.Lives = managers.Game.lives;
   
         this.Main();
       }

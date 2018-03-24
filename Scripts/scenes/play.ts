@@ -11,8 +11,6 @@ module scenes {
     private _engineSound: createjs.AbstractSoundInstance;
     private _coin: objects.Coin;
 
-    // Public Properties
-
     // Constructor
     constructor() {
       super();
@@ -83,6 +81,9 @@ module scenes {
       if(this._scoreBoard.Score >= 500){
         managers.Game.currentScene = config.Scene.LEVEL2;
       }
+
+      managers.Game.lives = this._scoreBoard.Lives;
+      managers.Game.score = this._scoreBoard.Score;
 
     }
 
