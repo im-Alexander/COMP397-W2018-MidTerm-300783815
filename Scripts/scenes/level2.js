@@ -23,11 +23,11 @@ var scenes;
         // Public Methods
         // Initialize Game Variables and objects
         Level2Scene.prototype.Start = function () {
-            this._ocean = new objects.Ocean();
-            this._plane = new objects.Plane();
-            managers.Game.plane = this._plane;
-            this._coin = new objects.Coin();
-            this._island = new objects.Island();
+            this._ocean = new objects.Ocean2();
+            this._plane2 = new objects.Plane2();
+            managers.Game.plane2 = this._plane2;
+            this._coin = new objects.Coin2();
+            this._island2 = new objects.Island2();
             // instantiate the cloud array
             this._clouds = new Array();
             this._cloudNum = 2;
@@ -49,17 +49,17 @@ var scenes;
         Level2Scene.prototype.Update = function () {
             var _this = this;
             this._ocean.Update();
-            this._plane.Update();
-            this._coin.x = this._island.x;
-            this._coin.y = this._island.y;
+            this._plane2.Update();
+            this._coin.x = this._island2.x;
+            this._coin.y = this._island2.y;
             this._coin.Update();
-            this._island.Update();
+            this._island2.Update();
             // check collision between plane and coin
-            managers.Collision.Check(this._plane, this._coin);
+            managers.Collision.Check(this._plane2, this._coin);
             this._clouds.forEach(function (cloud) {
                 cloud.Update();
                 // check collision between plane and current cloud
-                managers.Collision.Check(_this._plane, cloud);
+                managers.Collision.Check(_this._plane2, cloud);
             });
             // if lives fall below zero switch scenes to the game over scene
             if (this._scoreBoard.Lives <= 0) {
@@ -73,12 +73,12 @@ var scenes;
             // add the ocean to the scene
             this.addChild(this._ocean);
             // add the island to the scene
-            this.addChild(this._island);
+            this.addChild(this._island2);
             // add the coin to the scene
             this.addChild(this._coin);
             // add the plane to the scene
-            this.addChild(this._plane);
-            this.addChild(this._plane.planeFlash); // add the plane flashing effect
+            this.addChild(this._plane2);
+            this.addChild(this._plane2.planeFlash); // add the plane flashing effect
             // add clouds to the scene
             this._clouds.forEach(function (cloud) {
                 _this.addChild(cloud);

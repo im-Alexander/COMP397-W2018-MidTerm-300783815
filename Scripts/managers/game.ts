@@ -11,5 +11,6 @@ module managers {
     public static score: number = 0;
     public static textureAtlas: createjs.SpriteSheet;
     public static plane: objects.Plane;
+    public static plane2: objects.Plane2;
   }
 }

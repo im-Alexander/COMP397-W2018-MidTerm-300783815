@@ -1,15 +1,15 @@
 module scenes {
     export class Level2Scene extends objects.Scene {
       // Private Instance Variables
-      private _ocean: objects.Ocean;
-      private _plane: objects.Plane;
-      private _island: objects.Island;
+      private _ocean: objects.Ocean2;
+      private _plane2: objects.Plane2;
+      private _island2: objects.Island2;
       private _clouds: objects.Cloud[];
       private _cloudNum: number;
       private _scoreBoard: managers.ScoreBoard;
   
       private _engineSound: createjs.AbstractSoundInstance;
-      private _coin: objects.Coin;
+      private _coin: objects.Coin2;
   
       // Public Properties
   
@@ -28,12 +28,12 @@ module scenes {
   
       // Initialize Game Variables and objects
       public Start(): void {
-        this._ocean = new objects.Ocean();
-        this._plane = new objects.Plane();
-        managers.Game.plane = this._plane;
+        this._ocean = new objects.Ocean2();
+        this._plane2 = new objects.Plane2();
+        managers.Game.plane2 = this._plane2;
   
-        this._coin = new objects.Coin();
-        this._island = new objects.Island();
+        this._coin = new objects.Coin2();
+        this._island2 = new objects.Island2();
   
         // instantiate the cloud array
         this._clouds = new Array<objects.Cloud>();
@@ -60,21 +60,21 @@ module scenes {
       // triggered every frame
       public Update(): void {
         this._ocean.Update();
-        this._plane.Update();
+        this._plane2.Update();
   
-        this._coin.x = this._island.x;
-        this._coin.y = this._island.y;
+        this._coin.x = this._island2.x;
+        this._coin.y = this._island2.y;
         this._coin.Update();
   
-        this._island.Update();
+        this._island2.Update();
   
         // check collision between plane and coin
-        managers.Collision.Check(this._plane, this._coin);
+        managers.Collision.Check(this._plane2, this._coin);
   
         this._clouds.forEach(cloud => {
           cloud.Update();
           // check collision between plane and current cloud
-          managers.Collision.Check(this._plane, cloud);
+          managers.Collision.Check(this._plane2, cloud);
         });
   
         // if lives fall below zero switch scenes to the game over scene
@@ -91,14 +91,14 @@ module scenes {
         this.addChild(this._ocean);
   
         // add the island to the scene
-        this.addChild(this._island);
+        this.addChild(this._island2);
   
         // add the coin to the scene
         this.addChild(this._coin);
   
         // add the plane to the scene
-        this.addChild(this._plane);
-        this.addChild(this._plane.planeFlash); // add the plane flashing effect
+        this.addChild(this._plane2);
+        this.addChild(this._plane2.planeFlash); // add the plane flashing effect
   
         // add clouds to the scene
   
