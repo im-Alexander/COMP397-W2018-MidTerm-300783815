@@ -19,5 +19,6 @@
 /// <reference path="../../Scripts/objects/cloud.ts"/>
 /// <reference path="../../Scripts/scenes/over.ts"/>
 /// <reference path="../../Scripts/scenes/play.ts"/>
+/// <reference path="../../Scripts/scenes/level2.ts"/>
 /// <reference path="../../Scripts/scenes/start.ts"/>
 //# sourceMappingURL=_references.js.map
